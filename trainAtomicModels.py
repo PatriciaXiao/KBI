@@ -124,13 +124,14 @@ def dispatch_model(opts, inputs):
         sys.exit(1)
 
     if opts.model == "distMult":
-        model = build_atomic_model(opts, getDM_score)
+        model = build_atomic_model(opts, getDM_score) # models.py
         testData, oov_flags_1, oov_flags_2, seen_e2, oov_e2 = get_test_data_DM(opts, True)
         _ , oov_flags, _, _  = get_test_data_matrix(opts, verbose=True)
 
-        score_fn = distMult_oovEval()
-        score_fn_aux = distMult_get_scores()
-        distMult_scorer = distMult_run()
+        score_fn = distMult_oovEval() # evalTensor_OOV.py
+        score_fn_aux = distMult_get_scores() # evalTensor_OOV.py
+        distMult_scorer = distMult_run() # evalTensor_OOV.py
+        # evalTensor_OOV.py
         evalFunc = lambda model: scoreDM_OOV(model,opts, testData, [train_entities, train_relations], 
                                             oov_flags_1, oov_flags_2,seen_e2, oov_e2, score_fn, score_fn_aux, distMult_scorer,oov_flags)                
     
