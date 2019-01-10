@@ -28,3 +28,6 @@ bestModels/
 NYT_FB_split/*joblib*
 NYT_FB/*joblib*
 lib/*.png
+
+data/*
+./data/*

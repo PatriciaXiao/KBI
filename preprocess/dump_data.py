@@ -12,6 +12,8 @@ import os
 '''
 This script prepares the data for all the models. To Run:
 python dump_data.py -neg_samples [] -dataset [currently supports fb15k-237/ nyt] -num_entities [for negative sampling]
+for example:
+python dump_data.py -path ./data/fb15k-237
 
 
 output:
@@ -29,7 +31,7 @@ and for non atomic, nytNonAtomic
 def get_params():
     parser = argparse.ArgumentParser(description ='generating negative samples')
     parser.add_argument('-neg_samples', action="store", default=200, dest="neg_samples", type=int)
-    #parser.add_argument('-dataset', action="store", default="FB15k-237", dest="dataset", type=str)
+    # parser.add_argument('-dataset', action="store", default="FB15k-237", dest="dataset", type=str)
     parser.add_argument('-num_entities', action="store", default=14541, dest="num_entities", type=int)
     parser.add_argument('-num_entity_pairs', action="store", default= -1, dest="num_entity_pairs", type=int)
     parser.add_argument('-path', action="store", default="", dest="path", type=str)

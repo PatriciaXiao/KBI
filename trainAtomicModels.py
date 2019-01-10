@@ -124,7 +124,7 @@ def dispatch_model(opts, inputs):
         sys.exit(1)
 
     if opts.model == "distMult":
-        model = build_atomic_model(opts, getDM_score) # models.py
+        model = build_atomic_model(opts, getDM_score) # lib/models.py
         testData, oov_flags_1, oov_flags_2, seen_e2, oov_e2 = get_test_data_DM(opts, True)
         _ , oov_flags, _, _  = get_test_data_matrix(opts, verbose=True)
 
