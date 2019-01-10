@@ -168,7 +168,7 @@ def getE_score(kb_entities, kb_relations, neg_samples_kb, opts):
 
 
 # == A generic function for constructing Tensor Factorization models. Requires a model_func that returns energies of positive and negative examples. Returns a loss
-def build_atomic_model(opts, model_func):
+def build_atomic_model(opts, model_func): # model_func = getDM_score
     neg_samples   = opts.neg_samples
     vect_dim      = opts.vect_dim
     num_entities  = opts.num_entities
